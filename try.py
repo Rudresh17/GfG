@@ -1,15 +1,13 @@
 cases=int(input(""))
-answers=[]
-for r in range(0,cases):
+for m in range(0,cases):
     size=int(input(""))
-    numbers=list(map(int,input().split()))
-    for m in range(0,size):
-        if(numbers.count(numbers[m])<2):
-            answers.append(numbers[m])
-    
-    if(len(answers)>0): 
-        print(answers[0])
+    results=[]
+    numbers=list(map(int, input (). split ()))
+    for a in range(1,size-1):
+        if(numbers[a]>numbers[a-1] and numbers[a]<numbers[a+1]):
+            results.append(numbers[a])
+    if(len(results)>0):
+        print(results[0])
     else:
-        print("0")
-
-    answers.clear()
+        print("-1")
+    results.clear()
